@@ -1,0 +1,2 @@
+rootProject.name = 'autumn'
+include('autumn-messages', 'autumn-resources')

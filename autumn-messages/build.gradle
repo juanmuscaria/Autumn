@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation(project(":autumn-resources"))
+}
+
+test {
+    useJUnitPlatform()
+}
