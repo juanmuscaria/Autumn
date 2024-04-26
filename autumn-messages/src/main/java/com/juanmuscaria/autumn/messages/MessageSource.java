@@ -16,6 +16,8 @@
 
 package com.juanmuscaria.autumn.messages;
 
+import com.juanmuscaria.autumn.messages.standard.ReloadableResourceBundleMessageSource;
+import com.juanmuscaria.autumn.messages.standard.ResourceBundleMessageSource;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Locale;

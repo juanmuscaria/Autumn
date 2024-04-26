@@ -1,16 +1,20 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
 allprojects {
     group = 'com.juanmuscaria'
     version = '1.0-SNAPSHOT'
 }
 
-subprojects {
+allprojects {
     project.pluginManager.withPlugin("java") {
         repositories {
             mavenCentral()
         }
 
         dependencies {
-            implementation 'org.jetbrains:annotations:24.1.0'
+            compileOnly 'org.jetbrains:annotations:24.1.0'
             testImplementation platform('org.junit:junit-bom:5.9.1')
             testImplementation 'org.junit.jupiter:junit-jupiter'
         }
@@ -18,5 +22,53 @@ subprojects {
         test {
             useJUnitPlatform()
         }
+
+        java {
+            withSourcesJar()
+            withJavadocJar()
+        }
+
+        project.pluginManager.withPlugin("maven-publish") {
+            publishing {
+                publications {
+                    create("maven", MavenPublication) {
+                        artifactId = project.name
+
+                        from components.java
+
+                        pom {
+                            name.set(project.name)
+                            description.set('Standalone Spring Framework components')
+                            url.set('https://github.com/juanmuscaria/Autumn')
+
+                            licenses {
+                                license {
+                                    name.set('Apache License, Version 2.0')
+                                    url.set('https://www.apache.org/licenses/LICENSE-2.0')
+                                }
+                            }
+
+                            scm {
+                                url.set("https://github.com/juanmuscaria/Autumn")
+                                connection.set("scm:git:git://github.com/juanmuscaria/Autumn.git")
+                                developerConnection.set("scm:git:git@github.com/juanmuscaria/Autumn.git")
+                            }
+                        }
+                    }
+                }
+
+                repositories {
+                    maven {
+                        url = rootProject.buildDir.absolutePath + "/repo"
+                        name = "filesystem"
+                    }
+                }
+            }
+        }
     }
+}
+
+dependencies {
+    implementation(project(":autumn-messages"))
+    implementation(project(":autumn-resources"))
 }

@@ -62,7 +62,7 @@ import java.util.logging.Level;
  * resource bundle will override ones in a later bundle, due to sequential lookup.
 
  * <p>This MessageSource can easily be used outside an
- * {@link org.springframework.context.ApplicationContext}: it will use a
+ * ApplicationContext: it will use a
  * {@link DefaultResourceLoader} as default,
  * simply getting overridden with the ApplicationContext's resource loader
  * if running in a context. It does not have any other specific dependencies.

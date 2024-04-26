@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
  * resources).
  *
  * <p>{@link DefaultResourceLoader} is a standalone implementation that is
- * usable outside an ApplicationContext and is also used by {@link ResourceEditor}.
+ * usable outside an ApplicationContext and is also used by ResourceEditor.
  *
  * <p>Bean properties of type {@code Resource} and {@code Resource[]} can be populated
  * from Strings when running in an ApplicationContext, using the particular

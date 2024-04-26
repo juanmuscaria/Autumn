@@ -26,14 +26,13 @@ package com.juanmuscaria.autumn.resources;
  * (This is consistent with the semantics in a Servlet container.)
  * <b>Use an explicit "file:" prefix to enforce an absolute file path.</b>
  *
- * <p>{@link org.springframework.context.support.FileSystemXmlApplicationContext}
+ * <p> org.springframework.context.support.FileSystemXmlApplicationContext
  * is a full-fledged ApplicationContext implementation that provides
  * the same resource path resolution strategy.
  *
  * @author Juergen Hoeller
  * @since 1.1.3
  * @see DefaultResourceLoader
- * @see org.springframework.context.support.FileSystemXmlApplicationContext
  */
 public class FileSystemResourceLoader extends DefaultResourceLoader {
 
@@ -44,7 +43,6 @@ public class FileSystemResourceLoader extends DefaultResourceLoader {
      * @param path the path to the resource
      * @return the corresponding Resource handle
      * @see FileSystemResource
-     * @see org.springframework.web.context.support.ServletContextResourceLoader#getResourceByPath
      */
     @Override
     protected Resource getResourceByPath(String path) {

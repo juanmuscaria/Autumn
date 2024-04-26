@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Default implementation of the {@link ResourceLoader} interface.
  *
- * <p>Used by {@link ResourceEditor}.
+ * <p>Used by ResourceEditor.
  * Can also be used standalone.
  *
  * <p>Will return a {@link UrlResource} if the location value is a URL,

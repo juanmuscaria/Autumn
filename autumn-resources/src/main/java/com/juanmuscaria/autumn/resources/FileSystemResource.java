@@ -108,7 +108,7 @@ public class FileSystemResource extends AbstractResource implements WritableReso
     /**
      * Create a new {@code FileSystemResource} from a {@link Path} handle,
      * performing all file system interactions via NIO.2 instead of {@link File}.
-     * <p>In contrast to {@link PathResource}, this variant strictly follows the
+     * <p>In contrast to PathResource, this variant strictly follows the
      * general {@link FileSystemResource} conventions, in particular in terms of
      * path cleaning and {@link #createRelative(String)} handling.
      * <p>Note: When building relative resources via {@link #createRelative},
@@ -118,7 +118,7 @@ public class FileSystemResource extends AbstractResource implements WritableReso
      * use the {@link #FileSystemResource(String) constructor with a file path}
      * to append a trailing slash to the root path: "C:/dir1/", which indicates
      * this directory as root for all relative paths. Alternatively, consider
-     * using {@link PathResource#PathResource(Path)} for {@code java.nio.path.Path}
+     * using PathResource#PathResource(Path) for {@code java.nio.path.Path}
      * resolution in {@code createRelative}, always nesting relative paths.
      * @param filePath a Path handle to a file
      * @since 5.1
